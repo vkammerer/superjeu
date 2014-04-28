@@ -1,0 +1,52 @@
+@mixin contentPadding {
+	padding:2%;
+}
+@mixin contentPadding2 {
+	padding:15%;
+}
+
+html {
+	height:100%;
+}
+body {
+	background:#DDD;
+	top:0;
+	bottom:0;
+	height:100%;
+	position:relative;
+	background:
+	radial-gradient(black 15%, transparent 16%) 0 0,
+	radial-gradient(black 15%, transparent 16%) 8px 8px,
+	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+	background-color:#282828;
+	background-size:16px 16px;
+	color:white;
+}
+#header [class*="span"]{
+	min-height:0;
+}
+#header {
+	position:relative;
+	box-sizing:border-box;
+	background:#000;
+	color:white;
+	font-weight:normal;
+	border-bottom:1px solid #444;
+	@include contentPadding;
+}
+#menu {
+	position:absolute;
+	top:-2px;
+	left:-2px;
+	display: inline-block;
+	background:white;
+	border: 1px solid #FFF;
+}
+form {
+	@include contentPadding2;
+	font-size:1.3em;
+}
+#questionform input[type=checkbox] {
+	float:right;margin-top:-27px;margin-right:10px
+}

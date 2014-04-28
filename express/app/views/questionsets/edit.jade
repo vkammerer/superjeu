@@ -1,0 +1,29 @@
+extends ../layouts/default
+
+block content
+	div.contentContainer
+		div.row-fluid
+			div.span4
+				h1 Edit Questionset
+		div.row-fluid
+			div.span12
+				form(action="/admin/questionsets/" + questionset.id, method="post")
+					input(type="hidden", name="_method", value="delete")
+					div
+						input(type="submit", value="Delete Questionset")
+				form.form-horizontal(action="/admin/questionsets/" + questionset.id, method="post", class="custom")
+					input(type="hidden", name="_method", value="put")
+					fieldset
+						h3 Questionset
+						div.control-group
+							div.controls
+								textarea(name="questionsetlabel", placeholder="Question", rows="3") #{questionset.questionsetlabel}
+						div.control-group
+							input.btn(type="submit", value="Update questionset")
+
+		div.row-fluid
+			div.span12
+				if (typeof errors !== 'undefined')
+					ul
+						each error in errors
+							li= error.type

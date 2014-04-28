@@ -1,0 +1,13 @@
+<div>
+	<vkheader></vkheader>
+	<vkmenu></vkmenu>
+	<form class="pure-form">
+	    <fieldset class="pure-group">
+		  	<input type="text" ng-model="user.firstname" class="pure-input-1" placeholder="First name">
+		  	<input type="text" ng-model="user.lastname" class="pure-input-1" placeholder="Last name">
+		  	<input type="email" ng-model="user.email" class="pure-input-1" placeholder="Email">
+		  	<input type="password" ng-model="user.password" class="pure-input-1" placeholder="Password">
+		</fieldset>
+	  	<button class="pure-button pure-input-1 notice" ng-click="signin(user)">Sign up</button>
+	</form>
+</div>

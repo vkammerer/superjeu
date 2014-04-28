@@ -1,0 +1,21 @@
+extends ../layouts/default
+
+block content
+	div.contentContainer
+		div.row-fluid
+			div.span12
+				h1 Question
+		div.row-fluid
+			div.span12
+				div
+					a.btn(href="/admin/questions/" + question.id + '/edit') edit
+				h2 #{question.questionlabel}
+				ul
+				each answerNum in [0,1,2,3]
+					li
+						Answer #{answerNum} : #{question.answers[answerNum].answerlabel}
+						span Correct ? 
+						if ((question.answers[answerNum]) && (question.answers[answerNum].iscorrect))
+							| yes
+						else
+							| no

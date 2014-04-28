@@ -1,0 +1,25 @@
+{
+  "name": "superjeu",
+  "subdomain": "superjeu",
+  "version": "0.0.1-38",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "latest",
+    "underscore": "latest",
+    "socket.io": "latest",
+    "jade": "latest",
+    "mongoose": "latest",
+    "less-middleware": "latest",
+    "connect-flash": "latest",
+    "connect-mongo": "latest",
+    "async": "latest",
+    "passport": "latest",
+    "passport-local": "latest"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}

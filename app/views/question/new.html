@@ -1,0 +1,26 @@
+<div>
+	<vkheader></vkheader>
+	<vkmenu></vkmenu>
+	<form class="pure-form" id="questionform">
+	    <fieldset class="pure-group">
+			<select  style="width: 100%;box-sizing: border-box;"  ng-model="question.questionset_id">
+				<option value="">Choose set</option>
+				<option ng-repeat="questionset in questionsets" value="{{questionset._id}}">{{questionset.questionsetlabel}}</option>
+			</select>
+			<br/>
+			<br/>
+		  	<textarea style="width: 100%;box-sizing: border-box;font-size:.8em;padding:10px;font-weight:300" ng-model="question.questionlabel" class="pure-textarea-1" placeholder="Question"></textarea>
+			<br/>
+			<br/>
+		  	<input type="text" ng-model="question.answer0" class="pure-input-1" placeholder="Answer 1">
+			<input type="checkbox" name="answer0_true" id="answer0_true">
+		  	<input type="text" ng-model="question.answer1" class="pure-input-1" placeholder="Answer 2">
+			<input type="checkbox" name="answer1_true" id="answer1_true">
+		  	<input type="text" ng-model="question.answer2" class="pure-input-1" placeholder="Answer 3">
+			<input type="checkbox" name="answer2_true" id="answer2_true">
+		  	<input type="text" ng-model="question.answer3" class="pure-input-1" placeholder="Answer 4">
+			<input type="checkbox" name="answer3_true" id="answer3_true">
+		</fieldset>
+	  	<submitbutton submitdestination="submitForm()" submittext="{{submitbuttontext}}"></submitbutton>	  	
+	</form>
+</div>

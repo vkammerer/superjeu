@@ -1,0 +1,13 @@
+extends ../layouts/default
+
+block content
+	div.contentContainer
+		div.row-fluid
+			div.span4
+				h1 All questionsets
+		div.row-fluid
+			div.span4
+				ul
+					each questionset in questionsets
+						li: a(href="/admin/questionsets/" + questionset.id) #{questionset.questionsetlabel}
+			div

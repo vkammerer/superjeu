@@ -1,0 +1,9 @@
+<section>
+  <h1>Superjeu</h1>
+  <p>
+    <input type="text" ng-model="questionset.questionlabel"> 
+  </p>
+  <div ng-repeat="answer in questionset.answers">
+    <div ng-click="console.log(yo)">{{answer.answerlabel}}</div>
+  </div>
+</section>

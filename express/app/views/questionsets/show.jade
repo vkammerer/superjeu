@@ -1,0 +1,12 @@
+extends ../layouts/default
+
+block content
+	div.contentContainer
+		div.row-fluid
+			div.span12
+				h1 Questionset
+		div.row-fluid
+			div.span12
+				div
+					a.btn(href="/admin/questionsets/" + questionset.id + '/edit') edit
+				h2 #{questionset.questionsetlabel}

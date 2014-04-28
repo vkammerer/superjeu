@@ -1,0 +1,16 @@
+div.navbar
+	div.navbar-inner
+		a(href="/admin", class="brand") vkJeu
+		ul.nav
+			if (req.isAuthenticated())
+				li: a(href="/admin/questions") All questions
+				li: a(href="/admin/questions/nouveau") New question
+			li: a(href="/admin/users") All users
+			if (req.isAuthenticated())
+				li: a(href="/admin/users/" + req.user.id) Profile
+				li.divider
+				li: a(href="/admin/users/logout") Logout
+			else
+				li: a(href="/admin/users/signup") Signup
+				li.divider
+				li: a(href="/admin/users/login") Login

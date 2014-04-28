@@ -1,0 +1,42 @@
+extends ../layouts/default
+
+block content
+	div.contentContainer
+		div.row-fluid
+			div.span4
+				h1 Edit Question
+		div.row-fluid
+			div.span12
+				form(action="/admin/questions/" + question.id, method="post")
+					input(type="hidden", name="_method", value="delete")
+					div
+						input(type="submit", value="Delete Question")
+				form.form-horizontal(action="/admin/questions/" + question.id, method="post", class="custom")
+					input(type="hidden", name="_method", value="put")
+					fieldset
+						h3 Question
+						div.control-group
+							div.controls
+								textarea(name="questionlabel", placeholder="Question", rows="3") #{question.questionlabel}
+						h3 Answers
+						each answerNum in [0,1,2,3]
+							div.control-group
+								div.controls
+									if (question.answers[answerNum])
+										input(type="text", name="answer#{answerNum}", value=question.answers[answerNum].answerlabel, placeholder="Answer #{answerNum}")
+									else
+										input(type="text", name="answer#{answerNum}", placeholder="Answer #{answerNum}")
+									label.checkbox.inline(for="answer#{answerNum}_true") Correct
+										if ((question.answers[answerNum]) && (question.answers[answerNum].iscorrect))
+											input(type="checkbox", name="answer#{answerNum}_true", id="answer#{answerNum}_true", checked)
+										else
+											input(type="checkbox", name="answer#{answerNum}_true", id="answer#{answerNum}_true")
+						div.control-group
+							input.btn(type="submit", value="Update question")
+
+		div.row-fluid
+			div.span12
+				if (typeof errors !== 'undefined')
+					ul
+						each error in errors
+							li= error.type

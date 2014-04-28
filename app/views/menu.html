@@ -1,0 +1,7 @@
+<div id="menu" class="pure-menu" ng-class="{ 'pure-menu-open' : menu.isopen }">
+	<a ng-click="togglemenu()">{{title}}</a>
+	<ul ng-show="menu.isopen">
+	    <li ng-repeat="link in links"><a ng-href="{{link.href}}">{{link.text}}</a></li>
+	    <li ng-show="user"><a ng-click="logout()">Sign out</a></li>
+	</ul>
+</div>

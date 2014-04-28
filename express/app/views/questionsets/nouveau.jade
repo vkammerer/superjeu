@@ -1,0 +1,24 @@
+extends ../layouts/default
+
+block content
+	div.contentContainer
+		div.row-fluid
+			div.span12
+				h1 Create questionset
+		div.row-fluid
+			div.span12
+				form.form-horizontal(action="/admin/questionsets/create", method="post", class="custom")
+					fieldset
+						h3 Questionset
+						div.control-group
+							div.controls
+								textarea(name="questionsetlabel", placeholder="Questionset", rows="3") #{questionset.questionsetlabel}
+						div.control-group
+							input.btn(type="submit", value="Create questionset")
+
+		div.row-fluid
+			div.span12
+				if (typeof errors !== 'undefined')
+					ul
+						each error in errors
+							li= error.type

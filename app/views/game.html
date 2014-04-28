@@ -1,0 +1,35 @@
+<div class="content">
+	<vkheader></vkheader>
+	<vkmenu></vkmenu>
+	<div class="row-fluid">		
+		<div class="span12">
+			<ol id="competitors">
+			    <li
+			    ng-repeat="competitor in competitors | orderBy:'score':true"
+			    ng-class="{self:competitor._id == user._id}">
+			    	<div class="name hasreplied_{{competitor.hasreplied}}">{{competitor.firstname.substring(0,1)}} {{competitor.lastname.substring(0,1)}}</div>
+			    	<div class="count">{{competitor.score}}</div>
+			    	<div id="ladder">
+				    	<div id="score" style="height:{{competitor.score * 2}}px"></div>
+			    	</div>
+			    </li>
+			</ol>
+		</div>
+	</div>
+	<div id="starter" ng-click="start()" ng-show="starter.status < 3" class="status_{{starter.status}}">{{starter.text}}</div>
+
+	<div ng-show="starter.status == 3">
+		<div id="question">
+			<h2>{{questionset.questionlabel}}</h2>
+		</div>
+		<ul id="answers">
+			<li ng-repeat="answer in questionset.answers | orderBy:'answerlabel' "
+			    ng-click="reply(answer)"
+			    ng-class="{replied:answer.isreplied, correct: answer.iscorrect, incorrect: !answer.iscorrect}">
+			    <table>
+			    	<tr><td>{{answer.answerlabel}}</td></tr>
+			    </table>
+			</li>
+		</ul>
+	</div>
+</div>

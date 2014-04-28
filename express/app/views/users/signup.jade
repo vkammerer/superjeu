@@ -1,0 +1,28 @@
+extends ../layouts/default
+
+block content
+	div.contentContainer
+		div.row-fluid
+			div.span4
+				h1 New User
+		div.row-fluid
+			div.span4
+				form(action="/admin/users/create", method="post")
+					div
+						label(for="firstname") First Name
+						input#firstname(type="text", name="firstname", value=user.firstname)
+					div
+						label(for="lastname") Last Name
+						input#lastname(type="text", name="lastname", value=user.lastname)
+					div
+						label(for="email") Email
+						input#email(type="email", name="email", value=user.email)
+					div
+						label(for="password") Password
+						input#password(type="password", name="password")
+					div
+						input.btn(type="submit", value="Sign up")
+					if (typeof errors !== 'undefined')
+						ul
+							each error in errors
+								li= error.type

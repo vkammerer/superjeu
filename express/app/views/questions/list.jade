@@ -1,0 +1,13 @@
+extends ../layouts/default
+
+block content
+	div.contentContainer
+		div.row-fluid
+			div.span4
+				h1 All questions
+		div.row-fluid
+			div.span4
+				ul
+					each question in questions
+						li: a(href="/admin/questions/" + question.id) #{question.questionlabel}
+			div

@@ -1,0 +1,10 @@
+{
+  "name": "superjeu",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "latest",
+    "bootstrap": "latest"
+  },
+  "devDependencies": {
+  }
+}
